@@ -42,5 +42,5 @@ function caution(msg, num) {
 // change the exported value to be the name of the function you defined
 module.exports = {
   a: range, // change undefined to be the name of the function defined to create the range of numbers (the first todo)
-  b: undefined // change undefined to be the name of the function defined to return the string with exclamations (the second todo)
+  b: caution // change undefined to be the name of the function defined to return the string with exclamations (the second todo)
 }
