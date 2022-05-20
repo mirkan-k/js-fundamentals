@@ -83,28 +83,38 @@ function getMiddleLetter (val1) {
 function seasonForMonth (monthName) {
 
   // TODO: write code in this function body to pass the tests
-  const monthList = [
-    "January", "February", "March", "April", "May", "June", "July",
-    "August", "September", "October", "November", "December"
-  ]
+  switch (monthName) {
+    case "December":
+    case "January":
+    case "February":
+      monthType = "Winter"
+    break;
 
-  if (monthName === monthList[2] || monthName === monthList[3] || monthName === monthList[4]) {
-    return 'Spring'
+    case "March":
+    case "April":
+    case "May":
+      monthType = "Spring"
+    break;
+
+    case "June":
+    case "July":
+    case "August":
+      monthType = "Summer"
+    break;
+
+    case "September":
+    case "October":
+    case "November":
+      monthType = "Autumn"
+    break;
+
+    default:
+      monthType = ""
   }
-  else if (monthName === monthList[5] || monthName === monthList[6] || monthName === monthList[7]) {
-    return 'Summer'
-  }
-  else if (monthName === monthList[8] || monthName === monthList[9] || monthName === monthList[10]) {
-    return 'Autumn'
-  }
-  else if (monthName === monthList[11] || monthName === monthList[0] || monthName === monthList[1]) {
-    return 'Winter'
-  }
-  else {
-    return ""
-  }
+
+  return monthType
 }
-//console.log(seasonForMonth('March'))
+// console.log(seasonForMonth('December'))
 
 module.exports = {
   a: isHello,
