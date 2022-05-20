@@ -1,24 +1,29 @@
+const { check } = require("prettier")
+
 // This function should return true if the passed string is equal to "Hello"
 function isHello (val1) {
 
   // TODO: write code in this function body to pass the tests
-
+  return val1 === "Hello"
 }
+// console.log(isHello("Hello"))
 
 // This function should return true if the passed string is not equal to "Hello"
 function isNotHello (val1) {
 
   // TODO: write code in this function body to pass the tests
-
+  return val1 !== "Hello"
 }
+// console.log(isNotHello("Hello"))
 
 // This function should return true if the string val1 is is longer
 // than string val2
 function isLongerThan (val1, val2) {
 
   // TODO: write code in this function body to pass the tests
-
+  return val1.length > val2.length
 }
+// console.log(isLongerThan('hello', 'bye'))
 
 // This function should return true if the string passed in the function's first
 // argument has an odd number of vowels
@@ -26,17 +31,46 @@ function isLongerThan (val1, val2) {
 function hasOddNumberVowels (val1) {
 
   // TODO: write code in this function body to pass the tests
+  let numOfVowels = 0
+  const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+  for (let char of val1) {
+    if (vowels.includes(char)) {
+      numOfVowels++
+    }
+  }
+  // console.log('Number of Vowels:', numOfVowels)
 
+  return numOfVowels % 2 !== 0;
+
+  /* Alternatively:
+  return val1.match(/[aeiou]/gi).length % 2 !== 0;
+  */
 }
+// console.log(hasOddNumberVowels('hello'))
 
 // this function should return the middle character of a string if it has an odd number
 // of characters. If there are an even number of characters the function should return
 // the middle two letters
 
+/*
+ READ string and check if has ODD or EVEN amount of letters. IF it's odd,
+ RETURN the middle character. IF even, RETURN the middle 2 character.
+*/
+
 function getMiddleLetter (val1) {
   // TODO: write code in this function body to pass the tests
+  const middleChar = Math.floor(val1.length / 2);
+  const middleEvenHalf = middleChar - 1;
 
+  if (val1.length % 2 === 0) {
+    return val1[middleChar];
+  } 
+  else {
+    return val1.substring([middleChar], [middleEvenHalf]);
+  }
 }
+console.log(getMiddleLetter('heyo'))
+// Don't know what's going on here
 
 // This function should return the name of the season for the provided
 // month name. For example, "January" should return "Winter". If the provided
