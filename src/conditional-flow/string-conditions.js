@@ -62,15 +62,14 @@ function getMiddleLetter (val1) {
   const middleChar = Math.floor(val1.length / 2);
   const middleEvenHalf = middleChar - 1;
 
-  if (val1.length % 2 === 0) {
+  if (val1.length % 2 === 1) {
     return val1[middleChar];
   } 
   else {
-    return val1.substring([middleChar], [middleEvenHalf]);
+    return val1[middleEvenHalf] + val1[middleChar];
   }
 }
-console.log(getMiddleLetter('heyo'))
-// Don't know what's going on here
+// console.log(getMiddleLetter('heyo'))
 
 // This function should return the name of the season for the provided
 // month name. For example, "January" should return "Winter". If the provided
