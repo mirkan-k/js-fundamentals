@@ -54,7 +54,7 @@ function hasOddNumberVowels (val1) {
 
 /*
  READ string and check if has ODD or EVEN amount of letters. IF it's odd,
- RETURN the middle character. IF even, RETURN the middle 2 character.
+ RETURN the middle character. IF even, RETURN the middle 2 characters.
 */
 
 function getMiddleLetter (val1) {
@@ -83,7 +83,28 @@ function getMiddleLetter (val1) {
 function seasonForMonth (monthName) {
 
   // TODO: write code in this function body to pass the tests
+  const monthList = [
+    "January", "February", "March", "April", "May", "June", "July",
+    "August", "September", "October", "November", "December"
+  ]
+
+  if (monthName === monthList[2] || monthName === monthList[3] || monthName === monthList[4]) {
+    return 'Spring'
+  }
+  else if (monthName === monthList[5] || monthName === monthList[6] || monthName === monthList[7]) {
+    return 'Summer'
+  }
+  else if (monthName === monthList[8] || monthName === monthList[9] || monthName === monthList[10]) {
+    return 'Autumn'
+  }
+  else if (monthName === monthList[11] || monthName === monthList[0] || monthName === monthList[1]) {
+    return 'Winter'
+  }
+  else {
+    return ""
+  }
 }
+//console.log(seasonForMonth('March'))
 
 module.exports = {
   a: isHello,
